@@ -1,9 +1,10 @@
 import "../styles/style.css"
-const URL = "https://hp-api.onrender.com/api/characters";
+const URL = "www.themealdb.com/api/json/v1/1/";
 
 async function getData(URl){
   const response = await fetch (URL); 
-  console.log(response);
+  const data = await response.json();
+  console.log(data); 
 }
 
 getData(URL); 
