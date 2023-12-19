@@ -6,6 +6,6 @@ async function test(){
     let data = await res.json()
     
   }
-  test()                                         
+                                     
   
                                        
