@@ -1,4 +1,6 @@
 const DOMSelectors = {
-    container: document.getElementById("container"),
+    letter: document.getElementById("letter"),
+    form: document.getElementById("form"),
+    container: document.getElementById("container")
 }
 export{DOMSelectors}
