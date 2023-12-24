@@ -49,8 +49,17 @@ function insertCards(arr){
   });
 }
 
+function clearInput (){
+  DOMSelectors.letter.value =""; 
+}
+
+function clearCards() {
+  const container = DOMSelectors.container;
+  container.innerHTML = '';
+}
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
+  clearCards() 
   const x = DOMSelectors.letter.value;
   const URL = `https://www.themealdb.com/api/json/v1/1/search.php?f=${x}`;
   
@@ -64,6 +73,7 @@ DOMSelectors.form.addEventListener("submit", function (event) {
     const data = await response.json();
     const arr = data.meals
     insertCards(arr); 
+    clearInput ()
 
   } catch (error) {
     console.error(error); // Log specific error details to the console
