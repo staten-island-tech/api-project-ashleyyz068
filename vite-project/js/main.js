@@ -179,7 +179,8 @@ DOMSelectors.form5.addEventListener("submit", function (event) {
     const data = await response.json();
     const arr = data.meals
     insertCards(arr); 
-    clearInput ()
+    clearInput (); 
+    console.log(data); 
 
   } catch (error) {
     console.error(error); // Log specific error details to the console
