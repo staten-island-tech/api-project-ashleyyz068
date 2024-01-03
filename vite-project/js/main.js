@@ -48,6 +48,26 @@ function insertCards(arr){
     )
   });
 }
+function insertCards2(arr){
+  arr.forEach(element => {
+    DOMSelectors.container.insertAdjacentHTML( "beforeend", `<div class="card">
+    <div class="card-img">
+      <img src=${element.strMealThumb} alt="">
+    </div>
+    <div class="card-content">
+      <h2 class="card-title"> ${element.strMeal} </h2>
+      <h3 class="card-title2"> Recipe</h3>
+      <p class="card-rec"> ${element.strInstructions}</p>
+        <p>Place of origin: britian</p>
+      <div class="video">
+        <a href= ${element.strYoutube}><button class="button-32" role="button">Video Tutorial</button></a>
+      </div>
+    </div>
+  </div>`
+      
+    )
+  });
+}
 
 function clearInput (){
   DOMSelectors.letter.value =""; 

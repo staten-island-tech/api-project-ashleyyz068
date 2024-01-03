@@ -39,6 +39,27 @@ body{
   display: block; 
   
 }
+.card2{
+  height: 40vh;
+  width: 18vw;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 1rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0.25rem 0 0.25rem rgba(0,0,0,0.25);
+  transition: all 0.3s;
+}
+
+.card-img2{
+  height: 80%;
+  width: 100%;
+  overflow: hidden;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+
+}
 
 .card-content {
   padding: 20px; /* Add padding here */
