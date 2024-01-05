@@ -50,20 +50,12 @@ function insertCards(arr){
 }
 function insertCards2(arr){
   arr.forEach(element => {
-    DOMSelectors.container.insertAdjacentHTML( "beforeend", `<div class="card">
-    <div class="card-img">
-      <img src=${element.strMealThumb} alt="">
-    </div>
-    <div class="card-content">
-      <h2 class="card-title"> ${element.strMeal} </h2>
-      <h3 class="card-title2"> Recipe</h3>
-      <p class="card-rec"> ${element.strInstructions}</p>
-        <p>Place of origin: britian</p>
-      <div class="video">
-        <a href= ${element.strYoutube}><button class="button-32" role="button">Video Tutorial</button></a>
-      </div>
-    </div>
-  </div>`
+    DOMSelectors.container.insertAdjacentHTML( "beforeend", `<div class="card2">
+    <img src=${element.strMealThumb} alt="" class="card-img2"> 
+  <div class="card-content">
+    <h2 class="card-title"> ${element.strMeal} </h2>
+  </div>
+</div>`
       
     )
   });
@@ -82,132 +74,137 @@ function clearCards() {
   container.innerHTML = '';
 }
 
-DOMSelectors.form1.addEventListener("submit", function (event) {
-  event.preventDefault();
-  clearCards() 
-  const x = DOMSelectors.letter.value;
-  const URL = `https://www.themealdb.com/api/json/v1/1/search.php?f=${x}`;
+// DOMSelectors.form1.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   clearCards() 
+//   const x = DOMSelectors.letter.value;
+//   const URL = `https://www.themealdb.com/api/json/v1/1/search.php?f=${x}`;
   
 
-  async function getData (URL){
-  try {
-    const response = await fetch(URL);
-    if (!response.ok) {
-      throw new Error(`Request failed with status: ${response.status}`);
-    }
-    const data = await response.json();
-    const arr = data.meals
-    insertCards(arr); 
-    clearInput ()
+//   async function getData (URL){
+//   try {
+//     const response = await fetch(URL);
+//     if (!response.ok) {
+//       throw new Error(`Request failed with status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     const arr = data.meals
+//     insertCards(arr); 
+//     clearInput ()
 
-  } catch (error) {
-    console.error(error); // Log specific error details to the console
-  }
-}
-getData(URL)
-});
+//   } catch (error) {
+//     console.error(error); // Log specific error details to the console
+//   }
+// }
+// getData(URL)
+// });
 
-DOMSelectors.form2.addEventListener("submit", function (event) {
-  event.preventDefault();
-  clearCards() 
-  const x = DOMSelectors.name.value;
-  const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${x}`;
+// DOMSelectors.form2.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   clearCards() 
+//   const x = DOMSelectors.name.value;
+//   const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${x}`;
   
 
-  async function getData (URL){
-  try {
-    const response = await fetch(URL);
-    if (!response.ok) {
-      throw new Error(`Request failed with status: ${response.status}`);
-    }
-    const data = await response.json();
-    const arr = data.meals
-    insertCards(arr); 
-    clearInput ()
+//   async function getData (URL){
+//   try {
+//     const response = await fetch(URL);
+//     if (!response.ok) {
+//       throw new Error(`Request failed with status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     const arr = data.meals
+//     insertCards(arr); 
+//     clearInput ()
 
-  } catch (error) {
-    console.error(error); // Log specific error details to the console
-  }
-}
-getData(URL)
-});
+//   } catch (error) {
+//     console.error(error); // Log specific error details to the console
+//   }
+// }
+// getData(URL)
+// });
 
 
-DOMSelectors.form3.addEventListener("submit", function (event) {
-  event.preventDefault();
-  clearCards() 
-  const x = DOMSelectors.area.value;
-  const URL = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${x}`;
+// DOMSelectors.form3.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   clearCards() 
+//   const x = DOMSelectors.area.value;
+//   const URL = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${x}`;
   
 
-  async function getData (URL){
-  try {
-    const response = await fetch(URL);
-    if (!response.ok) {
-      throw new Error(`Request failed with status: ${response.status}`);
-    }
-    const data = await response.json();
-    const arr = data.meals
-    insertCards(arr); 
-    clearInput ()
+//   async function getData (URL){
+//   try {
+//     const response = await fetch(URL);
+//     if (!response.ok) {
+//       throw new Error(`Request failed with status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     const arr = data.meals
+//     insertCards2(arr); 
+//     clearInput ()
 
-  } catch (error) {
-    console.error(error); // Log specific error details to the console
-  }
-}
-getData(URL)
-});
+//   } catch (error) {
+//     console.error(error); // Log specific error details to the console
+//   }
+// }
+// getData(URL)
+// });
 
-DOMSelectors.form4.addEventListener("submit", function (event) {
-  event.preventDefault();
-  clearCards() 
-  const x = DOMSelectors.ing.value;
-  const URL = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${x}`;
+// DOMSelectors.form4.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   clearCards() 
+//   const x = DOMSelectors.ing.value;
+//   const URL = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${x}`;
   
 
-  async function getData (URL){
-  try {
-    const response = await fetch(URL);
-    if (!response.ok) {
-      throw new Error(`Request failed with status: ${response.status}`);
-    }
-    const data = await response.json();
-    const arr = data.meals
-    insertCards(arr); 
-    clearInput ()
+//   async function getData (URL){
+//   try {
+//     const response = await fetch(URL);
+//     if (!response.ok) {
+//       throw new Error(`Request failed with status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     const arr = data.meals
+//     insertCards2(arr); 
+//     clearInput ()
 
-  } catch (error) {
-    console.error(error); // Log specific error details to the console
-  }
-}
-getData(URL)
-});
+//   } catch (error) {
+//     console.error(error); // Log specific error details to the console
+//   }
+// }
+// getData(URL)
+// });
 
-DOMSelectors.form5.addEventListener("submit", function (event) {
-  event.preventDefault();
-  clearCards() 
-  const x = DOMSelectors.cat.value;
-  const URL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${x}`;
+// DOMSelectors.form5.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   clearCards() 
+//   const x = DOMSelectors.cat.value;
+//   const URL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${x}`;
   
 
-  async function getData (URL){
-  try {
-    const response = await fetch(URL);
-    if (!response.ok) {
-      throw new Error(`Request failed with status: ${response.status}`);
-    }
-    const data = await response.json();
-    const arr = data.meals
-    insertCards(arr); 
-    clearInput (); 
-    console.log(data); 
+//   async function getData (URL){
+//   try {
+//     const response = await fetch(URL);
+//     if (!response.ok) {
+//       throw new Error(`Request failed with status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     const arr = data.meals
+//     insertCards2(arr); 
+//     clearInput (); 
+//     console.log(data); 
 
-  } catch (error) {
-    console.error(error); // Log specific error details to the console
-  }
+//   } catch (error) {
+//     console.error(error); // Log specific error details to the console
+//   }
+// }
+// getData(URL)
+// });
+
+function display (link, form){
+
+
 }
-getData(URL)
-});
 
 
 
