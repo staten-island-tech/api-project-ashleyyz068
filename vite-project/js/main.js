@@ -8,8 +8,8 @@ function insertCards(arr){
       <img src=${element.strMealThumb} alt="">
     </div>
     <div class="card-content">
-      <h2 class="card-title"> ${element.strMeal} </h2>
-      <h3 class="card-title2"> Recipe: </h3>
+      <h3 class="card-title"> ${element.strMeal} </h3>
+      <h4 class="card-title2"> Recipe: </h4>
       <p class="card-rec"> ${element.strInstructions}</p>
         <p>Place of origin: ${element.strArea}</p>
       <div class="video">
@@ -26,7 +26,7 @@ function insertCards2(arr){
     DOMSelectors.container.insertAdjacentHTML( "beforeend", `<div class="card2">
     <img src=${element.strMealThumb} alt="" class="card-img2"> 
   <div class="card-content">
-    <h2 class="card-title"> ${element.strMeal} </h2>
+    <h3 class="card-title"> ${element.strMeal} </h3>
   </div>
 </div>`
       
