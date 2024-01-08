@@ -9,9 +9,9 @@ function insertCards(arr){
     </div>
     <div class="card-content">
       <h2 class="card-title"> ${element.strMeal} </h2>
-      <h3 class="card-title2"> Recipe</h3>
+      <h3 class="card-title2"> Recipe: </h3>
       <p class="card-rec"> ${element.strInstructions}</p>
-        <p>Place of origin: britian</p>
+        <p>Place of origin: ${element.strArea}</p>
       <div class="video">
         <a href= ${element.strYoutube}><button class="button-32" role="button">Video Tutorial</button></a>
       </div>
@@ -73,9 +73,9 @@ function display (link, search, form, type){ // link, search(search by...), type
     }else{
       insertCards2(arr);
     }
-    clearInput (); 
     console.log(data); 
 
+    clearInput (); 
   } catch (error) {
     console.error(error); 
   }
