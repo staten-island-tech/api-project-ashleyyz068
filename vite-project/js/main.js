@@ -1,33 +1,6 @@
 import "../styles/style.css";
 import { DOMSelectors } from "./Dom";
 
-// DOMSelectors.form.addEventListener("submit", async function (event) {
-//   event.preventDefault();
-//   function insertCards(arr){
-  
-//   }
-//   const x = DOMSelectors.letter.value; 
-// const URL = `https://www.themealdb.com/api/json/v1/1/search.php?f=${x}`;
-
-//   async function getData (URL){
-//   try{
-//     const response = await fetch (URL); 
-//     if (response != 200){
-//       throw new Error (response.statusText);
-//     }
-//     console.log(URL); 
-//   }
-
-//   catch (error){
-//     console.log(error, "oppsie daisy")
-//   }
-// }
-// getData(URL);
-
-
-
-// });
-
 function insertCards(arr){
   arr.forEach(element => {
     DOMSelectors.container.insertAdjacentHTML( "beforeend", `<div class="card">
@@ -73,6 +46,51 @@ function clearCards() {
   const container = DOMSelectors.container;
   container.innerHTML = '';
 }
+
+
+function display (link, search, form, type){ // link, search(search by...), type(card type)
+  DOMSelectors[form].addEventListener("submit", function (event) {
+  event.preventDefault();
+  clearCards() 
+  const x = DOMSelectors[search].value;
+  const URL = `https://www.themealdb.com/api/json/v1/1/`+link+`=${x}`;
+  console.log(URL)
+  
+
+  async function getData (URL){
+  try {
+    
+    const response = await fetch(URL);
+    if (!response.ok) {
+      throw new Error(`Request failed with status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+
+    const arr = data.meals 
+    if(type===true){
+      insertCards(arr); 
+    }else{
+      insertCards2(arr);
+    }
+    clearInput (); 
+    console.log(data); 
+
+  } catch (error) {
+    console.error(error); 
+  }
+}
+getData(URL)
+});
+}
+display(`search.php?f`, 'letter', 'form1',true );  
+display(`search.php?s`, 'name', 'form2',true );  
+display(`filter.php?a`, 'area', 'form3', false );
+display(`filter.php?i`, 'ing', 'form4', false );
+display(`filter.php?c`, 'cat', 'form5', false );
+
+
+
 
 // DOMSelectors.form1.addEventListener("submit", function (event) {
 //   event.preventDefault();
@@ -200,11 +218,6 @@ function clearCards() {
 // }
 // getData(URL)
 // });
-
-function display (link, form){
-
-
-}
 
 
 
