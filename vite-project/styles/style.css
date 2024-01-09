@@ -1,77 +1,87 @@
-*{
-  padding:0;
-  margin: 0; 
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-.header{
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  background-color: aliceblue;
+  font-family: 'Archivo', sans-serif;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.header {
   background-size: cover;
-  height: 600px; 
+  height: 600px;
   background-color: #F9D5DB;
   align-items: center;
   background-image: url(https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
+
 }
+
 h1 {
   font-family: 'Archivo', sans-serif;
   font-size: 18rem;
   color: black;
   text-align: center;
   padding: 20rem;
-
 }
 
-html{
-  font-size: 62.5%;
-  height: 100%; 
-  min-height: 100%;
-}
-body{
-  background-color: aliceblue;
-  font-family: 'Archivo', sans-serif;
-  height:100%; 
-  width: 100%; 
-  font-size: 1.6rem; 
-}
-.div1{
+.div1 {
   margin-top: 2rem;
+  margin-left: 2rem;
 }
-#container{ 
-  margin-left: 5rem ; 
+
+#container {
+  margin-left: 5rem;
   flex-wrap: wrap;
   display: flex;
   margin-top: 2rem;
 }
-h3{
+
+h3 {
   font-family: 'Outfit', sans-serif;
   margin-bottom: 1rem;
   text-align: center;
   font-size: 3rem;
 }
-h4{
+
+h4 {
   text-align: center;
   font-family: 'Outfit', sans-serif;
   font-weight: 400;
 }
-p{
+
+p {
   font-family: 'Outfit', sans-serif;
   font-weight: 300;
 }
-.card-rec{
+
+.card-rec {
   margin-bottom: 2rem;
 }
 
-.card{
+.card {
   margin-left: 11rem;
   background-color: #fff;
-  box-shadow: 0.25rem 0 0.25rem rgba(0,0,0,0.25);
+  box-shadow: 0.25rem 0 0.25rem rgba(0, 0, 0, 0.25);
   margin: 2rem;
   border-radius: 20px;
-  width:45%; 
+  width: 45%;
 }
 
-.card-img{
+.card-img {
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
@@ -79,18 +89,20 @@ p{
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
-.card-img img{
-  width: 100%; 
-  height:auto;
+
+.card-img img {
+  width: 100%;
+  height: auto;
   object-fit: fill;
-  display: block; 
-  
-}
-.card-content {
-  padding: 20px; 
+  display: block;
+
 }
 
-.card2{
+.card-content {
+  padding: 20px;
+}
+
+.card2 {
   height: 40vh;
   width: 17vw;
   background-color: #fff;
@@ -99,11 +111,11 @@ p{
   align-items: center;
   margin: 1rem 1rem 1rem;
   border-radius: 20px;
-  box-shadow: 0.25rem 0 0.25rem rgba(0,0,0,0.25);
+  box-shadow: 0.25rem 0 0.25rem rgba(0, 0, 0, 0.25);
   transition: all 0.3s;
 }
 
-.card-img2{
+.card-img2 {
   height: 80%;
   width: 100%;
   overflow: hidden;
@@ -111,51 +123,56 @@ p{
   border-top-left-radius: 20px;
 }
 
-h2{
+h2 {
   font-weight: 500;
   font-size: 4rem;
 }
 
-form{
+form {
   margin-top: 1rem;
 }
 
 
 .video {
   margin-top: 2rem;
-  display:flex;
-  justify-content:  space-between;
-  align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media  screen and (max-width:1200px) {
+@media screen and (max-width:1200px) {
   .card {
-      width: 70%;
+    width: 70%;
   }
+
   .card2 {
     width: 70%;
-}
+  }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
   .card {
-      width: 100%;
+    width: 100%;
   }
+
   .card2 {
     width: 100%;
-    height:auto; 
-}
-.header{
-  height: 400px;
-}
-h1{
-  font-size: 6rem; 
-  text-align: center;
+    height: auto;
+  }
 
-}
-#container{
-  padding:3rem;
-}
+  .header {
+    height: 400px;
+  }
+
+  h1 {
+    font-size: 6rem;
+    text-align: center;
+
+  }
+
+  #container {
+    padding: 3rem;
+  }
 }
 
 
@@ -181,7 +198,7 @@ h1{
 .button-32:not(:disabled):focus {
   outline: 0;
   background: #f4e603;
-  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15);
 }
 
 .button-32:disabled {
@@ -197,7 +214,7 @@ h1{
   font-size: 1.2rem;
 }
 
-.text-input > input {
+.text-input>input {
   background: transparent;
   color: inherit;
   border: none;
@@ -205,11 +222,12 @@ h1{
   margin-bottom: 1rem;
   padding: 1rem .5rem;
   outline: transparent;
-  font-size: 1.2rem;  
+  font-size: 1.2rem;
 
 }
 
-input[type=text], select {
+input[type=text],
+select {
   width: 20%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -230,7 +248,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-    font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
 }
 
@@ -239,5 +257,5 @@ input[type=submit] :hover {
 }
 
 label {
-  display: block; 
+  display: block;
 }

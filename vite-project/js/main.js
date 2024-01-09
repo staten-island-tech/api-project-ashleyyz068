@@ -17,7 +17,7 @@ function insertCards(arr){
       </div>
     </div>
   </div>`
-      
+
     )
   });
 }
@@ -47,14 +47,37 @@ function clearCards() {
   container.innerHTML = '';
 }
 
+async function defaulted(URL){
+  try{
+    const response = await fetch(URL);
+    if (!response.ok) {
+      throw new Error(`Request failed with status: ${response.status}`);
+    }
+    const data = await response.json();
+
+    const arr = data.meals 
+
+    insertCards(arr); 
+  console.log(data); 
+
+  clearInput ();
+  } catch (error){
+    console.error(error); 
+  }
+} 
+
+defaulted(`https://www.themealdb.com/api/json/v1/1/search.php?f=a`); 
+
 
 function display (link, search, form, type){ // link, search(search by...), type(card type)
   DOMSelectors[form].addEventListener("submit", function (event) {
   event.preventDefault();
   clearCards() 
+  
   const x = DOMSelectors[search].value;
   const URL = `https://www.themealdb.com/api/json/v1/1/`+link+`=${x}`;
-  console.log(URL)
+  console.log(URL); 
+    
   
 
   async function getData (URL){
@@ -64,7 +87,6 @@ function display (link, search, form, type){ // link, search(search by...), type
     if (!response.ok) {
       throw new Error(`Request failed with status: ${response.status}`);
     }
-    
     const data = await response.json();
 
     const arr = data.meals 
@@ -88,8 +110,6 @@ display(`search.php?s`, 'name', 'form2',true );
 display(`filter.php?a`, 'area', 'form3', false );
 display(`filter.php?i`, 'ing', 'form4', false );
 display(`filter.php?c`, 'cat', 'form5', false );
-
-
 
 
 // DOMSelectors.form1.addEventListener("submit", function (event) {
