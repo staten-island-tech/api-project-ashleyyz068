@@ -1,5 +1,5 @@
 import "../styles/style.css";
-import { DOMSelectors } from "./Dom";
+import { DOMSelectors } from "./dom";
 
 function insertCards(arr){
   arr.forEach(element => {
